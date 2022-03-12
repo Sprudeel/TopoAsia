@@ -69,7 +69,7 @@ const answers = {
     fluesse: ["Amur", "Aralsee", "Baikalsee", "Balchaschsee", "Brahmaputra", "Euphrat", "Ganges", "!Huang He$Gelber Fluss", "Indus", "Irtysch", "Jenissej", "Lena", "Mekong", "Ob", "Tigris", "Ural", "!Jangtsekiang$Yangtse"],
 
     // Answers for Special Places
-    special: ["Arabische Wüste", "Kalahari", "Kongo-Becken", "Libysche Wüste", "Namib", "Nubische Wüste", "Sahara", "Sahel"]
+    special: ["Arabien", "Hochland von Anatolien", "Hochland von Dekkan", "Hochland von Iran", "Hochland von Tibet", "Indochina", "Kasachensteppe", "Mandschurei", "Mesopotamien", "Vorderindien", "Westsibirisches Tiefland", "Wüste Gobi", "Wüste Thar"]
 };
 
 
@@ -153,6 +153,16 @@ function startSpeedMode() {
     started = true;
 
     return started;
+}
+
+
+function multiSolution(answer) {
+
+    // create a new Answer and remove ! and $ and set od. between 
+    let newAnswer = answer.replace(/[!]/g, "");
+    newAnswer = newAnswer.replace(/[$]/g, " / ");
+
+    return newAnswer;
 }
 
 
@@ -545,28 +555,18 @@ function Game() {
 // Check if Solution is Correct
 function checkSolution() {
 
-    if(document.getElementById("myToggle").checked === true) {
-        var correctCounter = 0;
-        var currentSolution = document.getElementById(420).value.toLowerCase();
+    if(currentAnswer.charAt(0) === "!") {
 
-        for (let i = 0; i <= currentSolution.length; i++) {
+        // Remove ! from Answer
+        let newAnswer = currentAnswer.replace(/[!]/g, "");
 
-            if (currentSolution.charAt(i) === currentAnswer.toLowerCase().charAt(i)) {
-                correctCounter++;
-            } else if (currentAnswer.toLowerCase().charAt(i) === "è" && currentSolution.charAt(i) === "e" ) {
-                correctCounter++;
-            } else if (currentAnswer.toLowerCase().charAt(i) === "é" && currentSolution.charAt(i) === "e" ) {
-                correctCounter++;
-            } else if (currentAnswer.toLowerCase().charAt(i) === "ã" && currentSolution.charAt(i) === "a" ) {
-                correctCounter++;
-            } else if (currentAnswer.toLowerCase().charAt(i) === "ô" && currentSolution.charAt(i) === "o" ) {
-                correctCounter++;
-            }
-        }
+        // Splice Answers into Array at $
+        let newarrayAnswers = newAnswer.split("$");
 
-        if(correctCounter === currentSolution.length + 1) {
-
-            // Block Clicks while evaluation
+        // Check if one of the answers is correct
+        for(let i = 0; i < newarrayAnswers.length; i++) {
+            if(newarrayAnswers[i].toLowerCase() === document.getElementById(420).value.toLowerCase()) {
+                // Block Clicks while evaluation
             if (lastClick >= (Date.now() - delay)) {
                 lastClick = Date.now();
                 return lastClick;
@@ -599,14 +599,16 @@ function checkSolution() {
                 correct++;
             }
 
-        } else {
-            // Set Box Shadow to Red
-            document.getElementById(1000).style.boxShadow = "0px 0px 10px 10px #b91313ce";
-            document.getElementById(420).style.boxShadow = "0px 0px 10px 10px #b91313ce";
+            }
         }
 
-    } else if (document.getElementById("myToggle").checked === false) {
-            // If answer is correct go here
+        
+
+        
+
+    } else if (currentAnswer.charAt(0) !== "!") {
+        
+        // If answer is correct go here
         if(currentAnswer.toLowerCase() == document.getElementById(420).value.toLowerCase()) {
             
             // Block Clicks while evaluation
@@ -690,21 +692,46 @@ function evalKartei(input) {
 
 
 function showSolution() {
-    // remove button
-    document.getElementById(222).className = "text";
 
-    // show answer
-    document.getElementById(222).innerHTML = currentAnswer;
+    // Check if currentAnswer starts with !
+    if(currentAnswer.charAt(0) === "!") {
 
-    if (mode === "kartei") {
-        document.getElementById(2001).style.display = "inline-block";
-        document.getElementById(2002).style.display = "inline-block";
+        // remove button
+        document.getElementById(222).className = "text";
+
+        // show answer
+        let newAnswer = multiSolution(currentAnswer);
+        document.getElementById(222).innerHTML = newAnswer;
+
+        if (mode === "kartei") {
+            document.getElementById(2001).style.display = "inline-block";
+            document.getElementById(2002).style.display = "inline-block";
+        }
+
+        if(mode == "learn") {
+            firstTry = false;
+        }
+        return firstTry;
+
+    } else {
+
+        // remove button
+        document.getElementById(222).className = "text";
+
+        // show answer
+        document.getElementById(222).innerHTML = currentAnswer;
+
+        if (mode === "kartei") {
+            document.getElementById(2001).style.display = "inline-block";
+            document.getElementById(2002).style.display = "inline-block";
+        }
+
+        if(mode == "learn") {
+            firstTry = false;
+        }
+        return firstTry;
+    
     }
-
-    if(mode == "learn") {
-        firstTry = false;
-    }
-    return firstTry;
 }
 
 

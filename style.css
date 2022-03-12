@@ -24,7 +24,9 @@
 
 /* Entire Top Bar */
 .title {
-    display: flex;
+    display: grid; 
+    grid-template-columns: 15em 1fr 15em; 
+    gap: 1em 2em; 
     font-family: Archivo;
     background-color: white;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.4);
@@ -35,13 +37,11 @@
 
 /* Angaben ohne Gewähr */
 .version {
-    flex: 1;
     font-size: 15px;
 }
 
 /* Topo Afrika */
 .name {
-    flex: 5;
     font-size: 40px;
     font-weight: bold;
     text-align: center;
@@ -49,7 +49,6 @@
 
 /* Version and created by */
 .credit {
-    flex: 1;
     font-size: 15px;
 }
 
@@ -72,8 +71,8 @@ body {
 .content {
     height: 95vh;
     display: grid; 
-  grid-template-columns: 15em 1fr 15em; 
-  gap: 1em 2em; 
+    grid-template-columns: 15em 1fr 15em; 
+    gap: 1em 2em; 
     overflow-y: scroll;
 }
 
