@@ -567,43 +567,45 @@ function checkSolution() {
         for(let i = 0; i < newarrayAnswers.length; i++) {
             if(newarrayAnswers[i].toLowerCase() === document.getElementById(420).value.toLowerCase()) {
                 // Block Clicks while evaluation
-            if (lastClick >= (Date.now() - delay)) {
+                if (lastClick >= (Date.now() - delay)) {
+                    lastClick = Date.now();
+                    return lastClick;
+                }
                 lastClick = Date.now();
-                return lastClick;
-            }
-            lastClick = Date.now();
 
-            // Set Box Shadows to Green
-            document.getElementById(1000).style.boxShadow = "0px 0px 10px 10px #2aaf1eb2";
-            document.getElementById(420).style.boxShadow = "0px 0px 10px 10px #2aaf1eb2";
+                // Set Box Shadows to Green
+                document.getElementById(1000).style.boxShadow = "0px 0px 10px 10px #2aaf1eb2";
+                document.getElementById(420).style.boxShadow = "0px 0px 10px 10px #2aaf1eb2";
 
-            // Show Correct Answer on Correct Answer Board
-            if(mode != "learn") {
-                showCorrect(currentAnswer);
-            }
+                // Show Correct Answer on Correct Answer Board
+                if(mode != "learn") {
+                    showCorrect(currentAnswer);
+                }
 
-            // Update Correct Var
-            if(mode != "learn") {
-                correct++;
-            }
+                // Update Correct Var
+                if(mode != "learn") {
+                    correct++;
+                }
 
-            // Start New Game
-            setTimeout(() => {
-                Game();
-            }, 1000); 
+                // Start New Game
+                setTimeout(() => {
+                    Game();
+                }, 1000); 
 
-            // Delete Last Question while in Learm mode
-            if(firstTry == true && mode !== "endless" && mode !== "speed") {
-                arrayAnswers.splice((randomNumber - 1), 1);
-                showCorrect(currentAnswer);
-                correct++;
-            }
-
-            }
+                // Delete Last Question while in Learm mode
+                if(firstTry == true && mode !== "endless" && mode !== "speed") {
+                    arrayAnswers.splice((randomNumber - 1), 1);
+                    showCorrect(currentAnswer);
+                    correct++;
+                }
+                return;
+            } 
         }
 
         
-
+        // Set Box Shadow to Red
+        document.getElementById(1000).style.boxShadow = "0px 0px 10px 10px #b91313ce";
+        document.getElementById(420).style.boxShadow = "0px 0px 10px 10px #b91313ce";
         
 
     } else if (currentAnswer.charAt(0) !== "!") {
