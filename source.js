@@ -54,7 +54,7 @@ const answers = {
     staedte: ["Alexandria", "Assuan", "Kairo", "Addis Abeba", "Algier", "Oran", "Accra", "Mombasa", "Nairobi", "Monrovia", "Bengasi", "Tripolis", "Casablanca", "Fès", "Marrakesch", "Rabat", "Lagos", "Dakar", "Harare", "Mogadischu", "Khartoum", "Durban", "Johannesburg", "Kapstadt", "Port Elisabeth", "Pretoria", "Daressalam", "Tunis", "Kampala", "Kinshasa"],
 
     // Answers for Staaten
-    staaten: ["Ägypten", "Äquatorialguinea", "Äthiopien", "Algerien", "Angola", "Benin", "Botswana", "Burkina Faso", "Burundi", "Côte d'Ivoire", "Dschibuti", "Eritrea", "Gabun", "Gambia", "Ghana", "Guinea", "Guinea-Bissau", "Kamerun", "Kenia", "Komoren", "Kongo", "Lesotho", "Liberia", "Libyen", "Madagaskar", "Malawi", "Mali", "Marokko", "Mauretanien", "Mauritius", "Mosambik", "Namibia", "Niger", "Nigeria", "Ruanda", "Westsahara", "Swasiland", "Sambia", "São Tomé u. Principe", "Senegal", "Seychellen", "Sierra Leone", "Simbabwe", "Somalia", "Sudan", "Südsudan", "Südafrika", "Tansania", "Togo", "Tschad", "Tunesien", "Uganda", "Demokr. Rep. Kongo", "Zentralafrik. Rep."],
+    staaten: ["Afghanistan", "Armenien", "Aserbaidschan", "Bangladesch", "Bhutan", "Taiwan", "China", "Georgien", "Indien", "Indonesien", "Irak", "Iran", "Israel", "Japan", "Jemen", "Jordanien", "Kambodscha", "Kasachstan", "Kirgistan", "Nordkorea", "Kuwait", "Südkorea", "Laos", "Libanon", "Malaysia", "Malediven", "Mongolei", "!Myanmar$Burma", "Nepal", "Oman", "Pakistan", "Philippinen", "Russland", "Saudi-Arabien", "Singapur", "Sri Lanka", "Syrien", "Tadschikistan", "Thailand", "Türkei", "Turkmenistan", "Usbekistan", "VA Emirate", "Vietnam"],
 
     // Answers for Meere
     meere: ["Arabisches Meer", "Beringmeer", "Gelbes Meer", "Golf von Aden", "Golf von Bengalen", "!Indischer Ozean$Indik", "Japanisches Meer", "Kaspisches Meer", "Kuro-Schio", "Malakkastrasse", "Nordpolarmeer", "Ostchinesisches Meer", "!Pazifischer Ozean$Pazifik", "Persischer Golf", "Rotes Meer", "Schwarzes Meer", "Südchinesisches Meer"],
@@ -298,7 +298,7 @@ function Game() {
 
         // Set Loading Image
         if(subject === "staedte" || subject === "staaten") {
-            document.getElementById(1000).src = "images/Politisch-Loading.png";
+            document.getElementById(1000).src = "images/Politic_Loading.jpg";
         } else {
             document.getElementById(1000).src = "images/Nature_Loading.jpg";
         }
@@ -356,7 +356,7 @@ function Game() {
                
         // Set Loading Image
         if(subject === "staedte" || subject === "staaten") {
-            document.getElementById(1000).src = "images/Politisch-Loading.png";
+            document.getElementById(1000).src = "images/Politic_Loading.jpg";
         } else {
             document.getElementById(1000).src = "images/Nature_Loading.jpg";
         }
@@ -419,7 +419,7 @@ function Game() {
         // check if everything has already been learned
         if(correct == length) {
             if(subject === "staedte" || subject === "staaten") {
-                document.getElementById(1000).src = "images/Politisch-Finish.png";
+                document.getElementById(1000).src = "images/Politic_Finish.jpg";
             } else {
                 document.getElementById(1000).src = "images/Nature_Finish.jpg";
             }
@@ -436,7 +436,7 @@ function Game() {
 
         // Set Loading Image
         if(subject === "staedte" || subject === "staaten") {
-            document.getElementById(1000).src = "images/Politisch-Loading.png";
+            document.getElementById(1000).src = "images/Politic_Loading.jpg";
         } else {
             document.getElementById(1000).src = "images/Nature_Loading.jpg";
         }
@@ -481,7 +481,7 @@ function Game() {
 
         if(correct == length) {
             if(subject === "staedte" || subject === "staaten") {
-                document.getElementById(1000).src = "images/Politisch-Finish.png";
+                document.getElementById(1000).src = "images/Politic_Finish.jpg";
             } else {
                 document.getElementById(1000).src = "images/Nature_Finish.jpg";
             }
@@ -498,7 +498,7 @@ function Game() {
 
         // Set Loading Image
         if(subject === "staedte" || subject === "staaten") {
-            document.getElementById(1000).src = "images/Politisch-Loading.png";
+            document.getElementById(1000).src = "images/Politic_Loading.jpg";
         } else {
             document.getElementById(1000).src = "images/Nature_Loading.jpg";
         }
