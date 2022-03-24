@@ -51,7 +51,7 @@ var firstTry = true;
 const answers = {
 
     // Answers for Städte
-    staedte: ["Alexandria", "Assuan", "Kairo", "Addis Abeba", "Algier", "Oran", "Accra", "Mombasa", "Nairobi", "Monrovia", "Bengasi", "Tripolis", "Casablanca", "Fès", "Marrakesch", "Rabat", "Lagos", "Dakar", "Harare", "Mogadischu", "Khartoum", "Durban", "Johannesburg", "Kapstadt", "Port Elisabeth", "Pretoria", "Daressalam", "Tunis", "Kampala", "Kinshasa"],
+    staedte: ["!Delhi$New Delhi", "!Dhaka$Dacca", "!Erewan$Jerewan", "!Guangzhou$Kanton", "!Ho-Chi-Minh-Stadt$Saigon", "!Mumbai$Bombay", "!Peking$Beijing", "!Tiflis$Tbilissi", "!Tokio$Tokyo", "!Yangon$Rangun", "Abu Dhabi", "Amman", "Ankara", "Bagdad", "Baku", "Bandung", "Bangkok", "Beirut", "Calcutta", "Chengdu", "Chongqing", "Colombo", "Damaskus", "Hanoi", "Hong Kong", "Irkutsk", "Islamabad", "Istanbul", "Jakarta", "Jerusalem", "Kabul", "Karatschi", "Kathmandu", "Kuala Lumpur", "Kuwait", "Madras", "Manila", "Medan", "Moskau", "Nowosibirsk", "Phnom Penh", "Pjöngjang", "Riad", "Schanghai", "Seoul", "Singapur", "Surabaya", "Taipeh", "Teheran", "Ulan Bator", "Wladiwostok", "Wuhan"],
 
     // Answers for Staaten
     staaten: ["Afghanistan", "Armenien", "Aserbaidschan", "Bangladesch", "Bhutan", "Taiwan", "China", "Georgien", "Indien", "Indonesien", "Irak", "Iran", "Israel", "Japan", "Jemen", "Jordanien", "Kambodscha", "Kasachstan", "Kirgistan", "Nordkorea", "Kuwait", "Südkorea", "Laos", "Libanon", "Malaysia", "Malediven", "Mongolei", "!Myanmar$Burma", "Nepal", "Oman", "Pakistan", "Philippinen", "Russland", "Saudi-Arabien", "Singapur", "Sri Lanka", "Syrien", "Tadschikistan", "Thailand", "Türkei", "Turkmenistan", "Usbekistan", "VA Emirate", "Vietnam"],
@@ -78,6 +78,7 @@ const answers = {
 /*  -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
     Stuff thats being done while the Page Loads
     -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-  */
+
 // Hide Expand Menu & Info Buttons
 document.getElementById(900).style.display = "none";
 document.getElementById(901).style.display = "none";
