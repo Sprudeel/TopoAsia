@@ -2,7 +2,7 @@
 
 Welcome to this Repository containing the Code of the Topo Learner Asia
 
-Play here: **Currently Testing**
+Play here: [TopoAsia](https://lchsd.ch/projects/topo_asia/)
 
 ## 📙 About this Project
 This Project is being created to help people learn the Topography of Africa!
