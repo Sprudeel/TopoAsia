@@ -1,4 +1,4 @@
-# ✨ Topo Learner Asua ✨
+# ✨ Topo Learner Asia ✨
 
 Welcome to this Repository containing the Code of the Topo Learner Asia
 
